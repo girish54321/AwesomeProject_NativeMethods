@@ -95,7 +95,7 @@ android {
 
     namespace "com.awesomeproject"
     defaultConfig {
-        applicationId "com.awesomeproject"
+        applicationId "com.awesomeproject" 
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -130,6 +130,34 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+
+    //* code start's here
+
+    // RN Flavars
+    flavorDimensions "default"
+	
+	productFlavors {
+        dev {
+            resValue "string", "app_name", "DEV"
+            resValue "string", "base_url", "https://reqres.dev/api/"
+            resValue "string", "BUILD_ENV", "DEV"
+            applicationIdSuffix ".dev"
+        }
+        staging {
+            resValue "string", "app_name", "STAGING"
+            resValue "string", "base_url", "https://reqres.staging/api/"
+            resValue "string", "BUILD_ENV", "STAGING"
+            applicationIdSuffix ".staging"
+        }
+        prod {
+            resValue "string", "app_name", "PROD"
+            resValue "string", "base_url", "https://reqres.in/api/"
+            resValue "string", "BUILD_ENV", "PROD"
+            applicationIdSuffix ".prod"
+        }
+    }
+
+    //* End 
 
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
