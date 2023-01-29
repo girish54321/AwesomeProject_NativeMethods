@@ -14,6 +14,7 @@ function App(): JSX.Element {
 
   return (
     <SafeAreaView style={{ flex: 1, alignSelf: 'center', alignContent: 'center', justifyContent: 'center' }}>
+      <Text>iphone</Text>
       <Text style={{ fontSize: 60 }}>{buildInfo.BUILD_ENV}</Text>
       <Text style={{ fontSize: 22 }}>{buildInfo.BASE_URL}</Text>
     </SafeAreaView>
