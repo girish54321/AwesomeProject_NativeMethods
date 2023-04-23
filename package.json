@@ -7,7 +7,15 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "android:dev":"react-native run-android --variant=devDebug --appIdSuffix=dev",
+    "android:staging":"react-native run-android --variant=stagingDebug --appIdSuffix=staging",
+    "android:prod":"react-native run-android --variant=prodDebug --appIdSuffix=prod",
+    "dev:apk":"cd android && ./gradlew assembleDevRelease",
+    "stating:apk":"cd android && ./gradlew assembleStagingRelease",
+    "prod:apk":"cd android && ./gradlew assembleProdRelease",
+    "bundle:build": "cd android && ./gradlew bundleProdRelease",
+    "clean:android": "cd android && ./gradlew clean"
   },
   "dependencies": {
     "react": "18.2.0",
